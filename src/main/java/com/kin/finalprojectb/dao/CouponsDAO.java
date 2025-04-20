@@ -19,7 +19,6 @@ public interface CouponsDAO extends JpaRepository<Coupons,Integer> {
 
     Coupons getCouponsById(int couponID);
 
-    boolean existsByTitle(String title);
 
     boolean existsByCompaniesAndTitle(Companies companies,String title);
     ArrayList<Coupons> findCouponsByCustomers(Customers customers);
@@ -30,7 +29,6 @@ public interface CouponsDAO extends JpaRepository<Coupons,Integer> {
     ArrayList<Coupons> findCouponsByCompaniesAndPriceBefore(Companies companies, double maxPrice);
     ArrayList<Coupons> findCouponsByCompaniesAndCategory(Companies companies, Category category);
     void deleteById(int id);
-    boolean existsByCompanies(Integer id);
     @Modifying
     @Transactional
     @Query("DELETE  from Coupons c where c.endDate < current_date()")//custom query to delete expired coupons

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public abstract class ClientController {
 
-
     boolean isLogin = false;
 
     String askForLogin = "You need to login!!";
